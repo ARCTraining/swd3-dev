@@ -6,8 +6,21 @@ root: welcome
 
 # ===== Getting started ==========================================
 sections:
-- file: example_section/start
-  sections:
-    - file: example_section/example
+
+- file: sections/setup
+- file: sections/lifecycle
+- file: sections/agile
+- file: sections/structure
+- file: sections/package-manager
+- file: sections/ide
+- file: sections/lint
+- file: sections/git
+- file: sections/testing
+- file: sections/tdd
+- file: sections/pytest
+- file: sections/unit
+- file: sections/study-case
+
+# ===== Footnote =================================================
 - url: https://arc.leeds.ac.uk
   title: Research Computing Website
