@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome &#8212; Template documentation jupyter book</title>
+    <title>SWD3: Software development practices for Research &#8212; SWD3: Software development practices for Research</title>
   
   
   
@@ -19,15 +19,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -66,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon-32x32.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example section" href="example_section/start.html" />
+    <link rel="next" title="Setup" href="sections/setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,7 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -111,11 +120,16 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -130,9 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="#">
+  
   
   
   
@@ -142,26 +158,27 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="SWD3: Software development practices for Research - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="SWD3: Software development practices for Research - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
-                    Welcome
-                </a>
-            </li>
-        </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="example_section/start.html">Example section</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="example_section/example.html">Foo</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="sections/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/lifecycle.html">Software Development Life Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/agile.html">Project management methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/structure.html">Laying out a coding project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/package-manager.html">Package managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/ide.html">IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/lint.html">Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/git.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/tdd.html">Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/pytest.html">Testing frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/unit.html">Unit testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/study-case.html">Case of study</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
 </ul>
 
@@ -333,24 +350,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -361,11 +382,26 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>SWD3: Software development practices for Research</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workshop-content">Workshop content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delivering-plan">Delivering Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-problem">Major Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-summary">Material Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -373,13 +409,91 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
-<p>Welcome to a template Documentation site for the <a class="reference external" href="https://arcleeds.github.io">Research Computing Team</a> at the <a class="reference external" href="https://www.leeds.ac.uk">University of Leeds</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="swd3-software-development-practices-for-research">
+<h1>SWD3: Software development practices for Research<a class="headerlink" href="#swd3-software-development-practices-for-research" title="Permalink to this heading">#</a></h1>
+<p>Booking for this course is through the IT Training Unit. <a class="reference external" href="https://uolr3.leeds.ac.uk/temcatsearch(bD1lbiZjPTUwMA==)/courses.htm?sap-params=Z2Rfa2V5d29yZHM9U1dEJTIwMyUzYSUyMFNvZnR3YXJlJmdkX3N0eXBlPSZnZF90dXRvcj1MYXN0JTIwbmFtZSZkYXRlMT1kZCUyZm1tJTJmeXl5eSZkYXRlMj1kZCUyZm1tJTJmeXl5eSZkYXRlMT0wMC4wMC4wMDAwJmRhdGUyPTAwLjAwLjAwMDAmcHJvdmlkZXJsaXN0PTAmYW5kb3I9QU5EJnNvcnQ9QkVHREEmZ2RfY2FsbGlkPUlOSVRJQUwmc3R5bGU9">Click here to book</a></p>
+<section id="workshop-content">
+<h2>Workshop content<a class="headerlink" href="#workshop-content" title="Permalink to this heading">#</a></h2>
+<p>The purpose of this workshop is to introduce a number of the techniques and concepts that professional software developers use to manage their code, projects and teams. Although the development of research codes and software has different needs and challenges to the development of commercial software, there are nonetheless some tools and techniques that we can adopt or adopt to improve our Research Software Engineering. This isn’t a programming workshop, so it will be relevant to you whichever programming language (on Windows, Linux or Mac) or infrastructure (HPC, Cloud, Desktop) you use. This will be a hands-on session with lots of discussion and small group activities. We’ll be joined by a number of people who develop codes and software who will share their experiences.</p>
+<p>At the end of the workshop, attendees will be able to:</p>
+<ul class="simple">
+<li><p>Understand the basics stages of Software Development Life Cycle</p></li>
+<li><p>How to layout a project</p></li>
+<li><p>How to using tools to optimise the work</p></li>
+<li><p>How to integrate the work with GitHub</p></li>
+<li><p>How to build a testing unit</p></li>
+<li><p>How to build a code documentation?</p></li>
+</ul>
+</section>
+<section id="delivering-plan">
+<h2>Delivering Plan<a class="headerlink" href="#delivering-plan" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Software</span> <span class="pre">Development</span> <span class="pre">Life</span> <span class="pre">Cycle</span></code> introduction using quarto slides</p></li>
+<li><p>Install Requirements (maybe ask this before)</p></li>
+<li><p>Start project and present all content available in this course in a practical example.</p></li>
+</ul>
+</section>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Setup: Install git</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Setup: Configure git</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Setup: Connect with GitHub</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Setup: Install Anaconda</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Setup: Add install VScode instructions</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> vsc: add extensions intro</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> vsc: add vsc market link</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> vsc: add link for the suggested extensions</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Lint: Add introduction</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Lint: Add PEP8 reference</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Lint: Add Flake8 example</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Lint: Add Black example</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> GitHub Actions: Setup <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">application</span></code> action</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a repository to present a solution for the Case of Study</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Documentation: add some docstring and sphinx example?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Deployment: add some Release information?</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Quarto slides for Software Development Life Cycle Introduction</p></li>
+</ul>
+<section id="major-problem">
+<h3>Major Problem<a class="headerlink" href="#major-problem" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Language - how we are going to address other languages?</p></li>
+</ul>
+</section>
+</section>
+<section id="material-summary">
+<h2>Material Summary<a class="headerlink" href="#material-summary" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sections/setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/lifecycle.html">Software Development Life Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/agile.html">Project management methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/structure.html">Laying out a coding project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/package-manager.html">Package managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/ide.html">IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/lint.html">Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/git.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/tdd.html">Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/pytest.html">Testing frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/unit.html">Unit testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sections/study-case.html">Case of study</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
+</ul>
 </div>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<p>The content in this material is a summary of several tools/techniques tailored
+to fit an one day course.</p>
+<p>If you want to learn in more detail some of the content presented here, please
+give a look in the following material:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://alan-turing-institute.github.io/rse-course/html/index.html">Alan Turing Institute: Research Software Engineering with Python</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -407,30 +521,48 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
-       href="example_section/start.html"
+       href="sections/setup.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Example section</p>
+        <p class="prev-next-title">Setup</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workshop-content">Workshop content</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delivering-plan">Delivering Plan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#major-problem">Major Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-summary">Material Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -448,6 +580,7 @@ By University of Leeds Research Computing Team
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -474,8 +607,8 @@ By University of Leeds Research Computing Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

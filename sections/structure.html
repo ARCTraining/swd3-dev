@@ -1,0 +1,683 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Laying out a coding project &#8212; SWD3: Software development practices for Research</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sections/structure';</script>
+    <link rel="canonical" href="https://arctraining.github.io/template-jb-docs/sections/structure.html" />
+    <link rel="shortcut icon" href="../_static/favicon-32x32.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Package managers" href="package-manager.html" />
+    <link rel="prev" title="Project management methodologies" href="agile.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="SWD3: Software development practices for Research - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="SWD3: Software development practices for Research - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">Software Development Life Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agile.html">Project management methodologies</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laying out a coding project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package-manager.html">Package managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lint.html">Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdd.html">Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">Testing frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="study-case.html">Case of study</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs/edit/gh-pages/book/sections/structure.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs/issues/new?title=Issue%20on%20page%20%2Fsections/structure.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/sections/structure.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Laying out a coding project</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-structure-suggestion">Basic Structure Suggestion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-packages">Modules &amp; Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-organisation">Test Organisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-basics">Beyond Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-cookie-cutter">Conda + Cookie cutter</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="laying-out-a-coding-project">
+<h1>Laying out a coding project<a class="headerlink" href="#laying-out-a-coding-project" title="Permalink to this heading">#</a></h1>
+<p>Good project layout ensures:</p>
+<ul class="simple">
+<li><p>Integrity of the data</p></li>
+<li><p>Portability of the project</p></li>
+<li><p>Ease to pick the project back up after a break or change in personnel</p></li>
+</ul>
+<p>There is no single way to organise a project…. but we need to take advantage
+some conventions.</p>
+<section id="basic-structure-suggestion">
+<h2>Basic Structure Suggestion<a class="headerlink" href="#basic-structure-suggestion" title="Permalink to this heading">#</a></h2>
+<p>Suppose you want to create a <strong>Python</strong> repository called <code class="docutils literal notranslate"><span class="pre">first-model</span></code>.
+The most basic structure for this project should look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>first-model
+├──<span class="w"> </span>src
+│<span class="w">   </span>└──<span class="w"> </span>__init__.py
+└──<span class="w"> </span>tests
+<span class="p">|</span><span class="w">   </span>├──<span class="w"> </span>__init__.py
+<span class="p">|</span><span class="w">   </span>└──<span class="w"> </span>test_first_model.py
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>requirements
+└──<span class="w"> </span>setup
+</pre></div>
+</div>
+<section id="modules-packages">
+<h3>Modules &amp; Packages<a class="headerlink" href="#modules-packages" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Modules: code files with <code class="docutils literal notranslate"><span class="pre">.py</span></code> extension</p></li>
+<li><p>Packages: directory to group modules. For a folder with several modules to be
+recognized as a package it is necessary to include the file <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You also can group your modules in sub-packages.</p>
+</div>
+</section>
+<section id="test-organisation">
+<h3>Test Organisation<a class="headerlink" href="#test-organisation" title="Permalink to this heading">#</a></h3>
+<p>It’s important to ensure that the code is bug-free and returns the expected
+results. Later in this course we will delve into how to properly test our code.
+For the moment let’s look at the test structure:</p>
+<ul class="simple">
+<li><p>All tests units (files and methods) must be named starting with <code class="docutils literal notranslate"><span class="pre">test_</span></code>
+and placed inside a package (or subpackage) called <code class="docutils literal notranslate"><span class="pre">tests</span></code>.</p></li>
+<li><p>Tests can be grouped in just one folder for the entire repository (as shown in
+the structure above) or they can be organized within each package/subpackage.</p></li>
+</ul>
+<p>By organizing tests as described, you can use frameworks like
+<a class="reference external" href="https://pypi.org/project/pytest/">pytest</a> to automatically fetch all test files
+in the repository and execute them.</p>
+<blockquote>
+<div><p>The pytest framework makes it easy to write small tests, yet scales to support
+complex functional testing for applications and libraries.</p>
+</div></blockquote>
+<p>- <a class="reference external" href="https://pypi.org/project/pytest/">pytest</a></p>
+</section>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">#</a></h3>
+<p>Configuration file that list all required external packages for your Python project.
+Two types of requirements file are quite common</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file is a simple file where the content looks like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.11
+numpy
+<span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.3.1
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file is a file used by <code class="docutils literal notranslate"><span class="pre">conda</span></code> to create an environment.
+The content looks like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>name:<span class="w"> </span>envName
+channels:
+<span class="w">  </span>-<span class="w"> </span>conda-forge
+<span class="w">  </span>-<span class="w"> </span>defaults
+dependencies:
+<span class="w">  </span>-<span class="w"> </span><span class="nv">python</span><span class="o">==</span><span class="m">3</span>.11
+<span class="w">  </span>-<span class="w"> </span>numpy
+<span class="w">  </span>-<span class="w"> </span><span class="nv">tensorflow</span><span class="o">==</span><span class="m">2</span>.3.1
+</pre></div>
+</div>
+</section>
+</section>
+<section id="beyond-basics">
+<h2>Beyond Basics<a class="headerlink" href="#beyond-basics" title="Permalink to this heading">#</a></h2>
+<p>You can create a project structure manually. But there are some automated
+approaches for this.</p>
+<section id="conda-cookie-cutter">
+<h3>Conda + Cookie cutter<a class="headerlink" href="#conda-cookie-cutter" title="Permalink to this heading">#</a></h3>
+<p>After create an empty repository, you can create and then activate our conda
+environment.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>reproPython<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9
+$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>reproPython
+</pre></div>
+</div>
+<p>The next step is to install cookiecutter (instructions
+<a class="reference external" href="https://pypi.org/project/cookiecutter/">here</a>).</p>
+<blockquote>
+<div><p>Cookiecutter is a command-line utility that creates projects from
+cookiecutters (project templates), e.g. creating a Python package project
+from a Python package project template.</p>
+</div></blockquote>
+<p>Then you must choose a project template.
+A good example to be used in scientific projects can be found here:
+<code class="docutils literal notranslate"><span class="pre">https://github.com/mkrapp/cookiecutter-reproducible-science.</span></code></p>
+<p>Now we can create the project structure by combining the Cookiecutter package
+with the GitHub repository. Again from the shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cookiecutter<span class="w"> </span>gh:mkrapp/cookiecutter-reproducible-science
+</pre></div>
+</div>
+<p>By using this method, the project structure should look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├──<span class="w"> </span>AUTHORS.md
+├──<span class="w"> </span>LICENSE
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>bin<span class="w">                </span>&lt;-<span class="w"> </span>Your<span class="w"> </span>compiled<span class="w"> </span>model<span class="w"> </span>code<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>stored<span class="w"> </span>here<span class="w"> </span><span class="o">(</span>not<span class="w"> </span>tracked<span class="w"> </span>by<span class="w"> </span>git<span class="o">)</span>
+├──<span class="w"> </span>config<span class="w">             </span>&lt;-<span class="w"> </span>Configuration<span class="w"> </span>files,<span class="w"> </span>e.g.,<span class="w"> </span><span class="k">for</span><span class="w"> </span>doxygen<span class="w"> </span>or<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>model<span class="w"> </span><span class="k">if</span><span class="w"> </span>needed
+├──<span class="w"> </span>data
+│<span class="w">   </span>├──<span class="w"> </span>external<span class="w">       </span>&lt;-<span class="w"> </span>Data<span class="w"> </span>from<span class="w"> </span>third<span class="w"> </span>party<span class="w"> </span>sources.
+│<span class="w">   </span>├──<span class="w"> </span>interim<span class="w">        </span>&lt;-<span class="w"> </span>Intermediate<span class="w"> </span>data<span class="w"> </span>that<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>transformed.
+│<span class="w">   </span>├──<span class="w"> </span>processed<span class="w">      </span>&lt;-<span class="w"> </span>The<span class="w"> </span>final,<span class="w"> </span>canonical<span class="w"> </span>data<span class="w"> </span>sets<span class="w"> </span><span class="k">for</span><span class="w"> </span>modelling.
+│<span class="w">   </span>└──<span class="w"> </span>raw<span class="w">            </span>&lt;-<span class="w"> </span>The<span class="w"> </span>original,<span class="w"> </span>immutable<span class="w"> </span>data<span class="w"> </span>dump.
+├──<span class="w"> </span>docs<span class="w">               </span>&lt;-<span class="w"> </span>Documentation,<span class="w"> </span>e.g.,<span class="w"> </span>doxygen<span class="w"> </span>or<span class="w"> </span>scientific<span class="w"> </span>papers<span class="w"> </span><span class="o">(</span>not<span class="w"> </span>tracked<span class="w"> </span>by<span class="w"> </span>git<span class="o">)</span>
+├──<span class="w"> </span>notebooks<span class="w">          </span>&lt;-<span class="w"> </span>Ipython<span class="w"> </span>or<span class="w"> </span>R<span class="w"> </span>notebooks
+├──<span class="w"> </span>reports<span class="w">            </span>&lt;-<span class="w"> </span>For<span class="w"> </span>a<span class="w"> </span>manuscript<span class="w"> </span>source,<span class="w"> </span>e.g.,<span class="w"> </span>LaTeX,<span class="w"> </span>Markdown,<span class="w"> </span>etc.,<span class="w"> </span>or<span class="w"> </span>any<span class="w"> </span>project<span class="w"> </span>reports
+│<span class="w">   </span>└──<span class="w"> </span>figures<span class="w">        </span>&lt;-<span class="w"> </span>Figures<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>manuscript<span class="w"> </span>or<span class="w"> </span>reports
+└──<span class="w"> </span>src<span class="w">                </span>&lt;-<span class="w"> </span>Source<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span>this<span class="w"> </span>project
+<span class="w">    </span>├──<span class="w"> </span>data<span class="w">           </span>&lt;-<span class="w"> </span>scripts<span class="w"> </span>and<span class="w"> </span>programs<span class="w"> </span>to<span class="w"> </span>process<span class="w"> </span>data
+<span class="w">    </span>├──<span class="w"> </span>external<span class="w">       </span>&lt;-<span class="w"> </span>Any<span class="w"> </span>external<span class="w"> </span><span class="nb">source</span><span class="w"> </span>code,<span class="w"> </span>e.g.,<span class="w"> </span>pull<span class="w"> </span>other<span class="w"> </span>git<span class="w"> </span>projects,<span class="w"> </span>or<span class="w"> </span>external<span class="w"> </span>libraries
+<span class="w">    </span>├──<span class="w"> </span>models<span class="w">         </span>&lt;-<span class="w"> </span>Source<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span>your<span class="w"> </span>own<span class="w"> </span>model
+<span class="w">    </span>├──<span class="w"> </span>tools<span class="w">          </span>&lt;-<span class="w"> </span>Any<span class="w"> </span>helper<span class="w"> </span>scripts<span class="w"> </span>go<span class="w"> </span>here
+<span class="w">    </span>└──<span class="w"> </span>visualization<span class="w">  </span>&lt;-<span class="w"> </span>Scripts<span class="w"> </span><span class="k">for</span><span class="w"> </span>visualisation<span class="w"> </span>of<span class="w"> </span>your<span class="w"> </span>results,<span class="w"> </span>e.g.,<span class="w"> </span>matplotlib,<span class="w"> </span>ggplot2<span class="w"> </span>related.
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sections"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="agile.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Project management methodologies</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="package-manager.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Package managers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-structure-suggestion">Basic Structure Suggestion</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-packages">Modules &amp; Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-organisation">Test Organisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#beyond-basics">Beyond Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conda-cookie-cutter">Conda + Cookie cutter</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By University of Leeds Research Computing Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

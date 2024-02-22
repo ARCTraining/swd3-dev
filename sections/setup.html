@@ -1,0 +1,854 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Setup &#8212; SWD3: Software development practices for Research</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sections/setup';</script>
+    <link rel="canonical" href="https://arctraining.github.io/template-jb-docs/sections/setup.html" />
+    <link rel="shortcut icon" href="../_static/favicon-32x32.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Software Development Life Cycle" href="lifecycle.html" />
+    <link rel="prev" title="SWD3: Software development practices for Research" href="../welcome.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../welcome.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="SWD3: Software development practices for Research - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="SWD3: Software development practices for Research - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lifecycle.html">Software Development Life Cycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agile.html">Project management methodologies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structure.html">Laying out a coding project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="package-manager.html">Package managers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ide.html">IDE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lint.html">Linting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">Version Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdd.html">Test-driven development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pytest.html">Testing frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unit.html">Unit testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="study-case.html">Case of study</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://arc.leeds.ac.uk">Research Computing Website</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs/edit/gh-pages/book/sections/setup.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ARCTraining/template-jb-docs/issues/new?title=Issue%20on%20page%20%2Fsections/setup.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/sections/setup.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setup</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-git">Installing Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-git-available">Is Git available?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-configurations">Basic configurations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-info">User info</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#text-editor">Text editor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-git-branch-naming">Default Git branch naming</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-configurations">Check your configurations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-help">Need help?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-references">Additional references</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">Installing Anaconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Linux</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h1>
+<section id="installing-git">
+<h2>Installing Git<a class="headerlink" href="#installing-git" title="Permalink to this heading">#</a></h2>
+<p>Please follow the instructions bellow to install and setting up Git.</p>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">#</a></h3>
+<p>Check if <code class="docutils literal notranslate"><span class="pre">git</span></code> is available on your machine by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>The above command returns the <code class="docutils literal notranslate"><span class="pre">git</span></code> version (if available).</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">git</span></code> is not already available on your machine you can try to install it via your distribution package manager (e.g. <code class="docutils literal notranslate"><span class="pre">apt-get</span></code> or <code class="docutils literal notranslate"><span class="pre">yum</span></code>), for example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>git
+</pre></div>
+</div>
+</section>
+<section id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">XCode</span></code> command line tools come with <code class="docutils literal notranslate"><span class="pre">Git</span></code> so no need to do anything more, as long as you can run the following in your terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
+<p>Install the <a class="reference external" href="http://windows.github.com/">GitHub Desktop Client</a>.
+This comes with both a GUI client as well as the <a class="reference external" href="https://gitforwindows.org/">Git Bash</a> terminal client which we will use during the course. In some instances Git Bash may need to be installed separately. In order to use conda with Git Bash follow the instructions <a class="reference external" href="https://discuss.codecademy.com/t/setting-up-conda-in-git-bash/534473">here</a></p>
+<p>You’ll know it has worked when you can open a Git Bash terminal (the window should have a title that starts with MINGW32) and get the Git version by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+</section>
+<section id="setting-up-git">
+<h2>Setting up Git<a class="headerlink" href="#setting-up-git" title="Permalink to this heading">#</a></h2>
+<section id="is-git-available">
+<h3>Is Git available?<a class="headerlink" href="#is-git-available" title="Permalink to this heading">#</a></h3>
+<p>Check if <code class="docutils literal notranslate"><span class="pre">git</span></code> is available on your machine by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>If git is not available you can follow instructions <span class="xref myst">here</span>
+to install git in your machine.</p>
+</section>
+<section id="basic-configurations">
+<h3>Basic configurations<a class="headerlink" href="#basic-configurations" title="Permalink to this heading">#</a></h3>
+<p>When we use Git on a new computer for the first time,
+we need to configure a few things. Below are a few examples
+of configurations we will set as we get started with Git:</p>
+<ul class="simple">
+<li><p>our name and email address,</p></li>
+<li><p>to colorize our output,</p></li>
+<li><p>what our preferred text editor is,</p></li>
+<li><p>and that we want to use these settings globally (i.e. for every project)</p></li>
+</ul>
+<section id="user-info">
+<h4>User info<a class="headerlink" href="#user-info" title="Permalink to this heading">#</a></h4>
+<p>On a command line, Git commands are written as <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">verb</span></code>,
+where <code class="docutils literal notranslate"><span class="pre">verb</span></code> is what we actually want to do. So here is how
+Jane sets up her new laptop:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Jane Smith&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">&quot;jane.smith@university.ac.uk&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to do this only once if you pass the <code class="docutils literal notranslate"><span class="pre">--global</span></code> option. If you want to override this with a different name or email address for specific projects, you can run the command without the <code class="docutils literal notranslate"><span class="pre">--global</span></code> option when you’re in that project.</p>
+</div>
+<p>Please use your <strong>own name and email address</strong> instead of Jane’s. Later on in this workshop, we’ll be setting up an account on <strong>Github</strong> so make sure you use the <strong>same email</strong> address. We recommend that you use your institutional email address.</p>
+<p>You can check that they have been set correctly by running</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>user.name
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>user.email
+</pre></div>
+</div>
+</section>
+<section id="colours">
+<h4>Colours<a class="headerlink" href="#colours" title="Permalink to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>color.ui<span class="w"> </span><span class="s2">&quot;auto&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="text-editor">
+<h4>Text editor<a class="headerlink" href="#text-editor" title="Permalink to this heading">#</a></h4>
+<p>Jane also has to set her favourite text editor, following this table:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Editor</p></th>
+<th class="head text-left"><p>Configuration command</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Atom</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;atom</span> <span class="pre">--wait&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>nano</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;nano</span> <span class="pre">-w&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>BBEdit (Mac, with command line tools)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;edit</span> <span class="pre">-w&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Sublime Text (Mac)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;subl</span> <span class="pre">-n</span> <span class="pre">-w&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Sublime Text (Win, 32-bit install)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Sublime Text (Win, 64-bit install)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/sublime</span> <span class="pre">text</span> <span class="pre">3/sublime_text.exe'</span> <span class="pre">-w&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Notepad++ (Win, 32-bit install)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files</span> <span class="pre">(x86)/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Notepad++ (Win, 64-bit install)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;'c:/program</span> <span class="pre">files/Notepad++/notepad++.exe'</span> <span class="pre">-multiInst</span> <span class="pre">-notabbar</span> <span class="pre">-nosession</span> <span class="pre">-noPlugin&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Kate (Linux)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;kate&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gedit (Linux)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;gedit</span> <span class="pre">--wait</span> <span class="pre">--new-window&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Scratch (Linux)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;scratch-text-editor&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>emacs</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;emacs&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>vim</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;vim&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>VS Code</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">core.editor</span> <span class="pre">&quot;code</span> <span class="pre">--wait&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>It is possible to reconfigure the text editor for Git whenever you want to change it.</p>
+</section>
+<section id="default-git-branch-naming">
+<h4>Default Git branch naming<a class="headerlink" href="#default-git-branch-naming" title="Permalink to this heading">#</a></h4>
+<p>Source file changes are associated with a <code class="docutils literal notranslate"><span class="pre">branch</span></code>. For new learners in this
+lesson, it’s enough to know that branches exist, and this lesson uses one
+branch.</p>
+<p>By default, Git will create a branch called <code class="docutils literal notranslate"><span class="pre">master</span></code> when you create a new
+repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> (as explained in the next Episode). This term evokes
+the racist practice of human slavery and the
+<a class="reference external" href="https://github.com/github/renaming">software development community</a>
+has moved to adopt more inclusive language.</p>
+<p>In 2020, most Git code hosting services transitioned to using <code class="docutils literal notranslate"><span class="pre">main</span></code> as the
+default branch. As an example, any new repository that is opened in GitHub and
+GitLab default to <code class="docutils literal notranslate"><span class="pre">main</span></code>. However, Git has not yet made the same change. As a
+result, local repositories must be manually configured have the same main
+branch name as most cloud services.</p>
+<p>To set <code class="docutils literal notranslate"><span class="pre">main</span></code> as your local default branch:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>init.defaultBranch<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Note that if this value is unset in your local Git configuration, the
+<code class="docutils literal notranslate"><span class="pre">init.defaultBranch</span></code> value defaults to <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
+</section>
+</section>
+<section id="check-your-configurations">
+<h3>Check your configurations<a class="headerlink" href="#check-your-configurations" title="Permalink to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+</section>
+<section id="need-help">
+<h3>Need help?<a class="headerlink" href="#need-help" title="Permalink to this heading">#</a></h3>
+<p>Always remember that if you forget the subcommands or options of a git command,
+you can access the relevant list of options typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">&lt;command&gt;</span> <span class="pre">-h</span></code>, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>-h
+</pre></div>
+</div>
+<p>or access the corresponding Git manual by typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">&lt;command&gt;</span> <span class="pre">--help</span></code>, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--help
+</pre></div>
+</div>
+<p>More generally, you can get the list of available git commands and further
+resources of the Git manual typing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span><span class="nb">help</span>
+</pre></div>
+</div>
+</section>
+<section id="additional-references">
+<h3>Additional references<a class="headerlink" href="#additional-references" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">More options to setting up git</a>.</p></li>
+<li><p>Check if your Git version is updated: <a class="reference external" href="https://en.wikipedia.org/wiki/Git#Releases">Releases</a></p></li>
+<li><p>More about setting up Git on MacOS and Windows: <a class="reference external" href="https://www.codecademy.com/article/git-setup">Git Setup</a> and <a class="reference external" href="https://www.codecademy.com/article/command-line-setup">Git bash setup</a></p></li>
+<li><p><a class="reference external" href="https://help.github.com/articles/dealing-with-line-endings/">About line ending issues</a>.</p></li>
+</ul>
+</section>
+</section>
+<section id="installing-anaconda">
+<h2>Installing Anaconda<a class="headerlink" href="#installing-anaconda" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.python.org/">Python</a> is a popular language for scientific computing, and great for
+general-purpose programming as well. Installing all of the scientific packages we use in the lesson
+individually can be a bit cumbersome, and therefore recommend the all-in-one
+installer <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>.</p>
+<section id="id1">
+<h3>Windows<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a> in your web browser.</p></li>
+<li><p>Download the Anaconda Python 3 installer for Windows.</p></li>
+<li><p>Double-click the executable and install Python 3 using the recommended settings.
+Make sure that <strong>Register Anaconda as my default Python 3.x</strong> option is checked –
+it should be in the latest version of Anaconda.</p></li>
+<li><p>Verify the installation:
+click Start, search and select <code class="docutils literal notranslate"><span class="pre">Anaconda</span> <span class="pre">Prompt</span></code> from the menu.
+A window should pop up where you can now type commands
+such as checking your Conda installation with:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--help
+</pre></div>
+</div>
+<iframe width="560" height="315" type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/xxQ0mzZ8UvA?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
+</section>
+<section id="id2">
+<h3>MacOS<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Visit <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a> in your web browser.</p></li>
+<li><p>Download the Anaconda Python 3 installer for macOS.
+These instructions assume that you use the graphical installer <code class="docutils literal notranslate"><span class="pre">.pkg</span></code> file.</p></li>
+<li><p>Follow the Anaconda Python 3 installation instructions.
+Make sure that the install location is set to “Install only for me”
+so Anaconda will install its files locally, relative to your home directory.
+Installing the software for all users tends to create problems in the long run
+and should be avoided.</p></li>
+<li><p>Verify the installation:
+click the Launchpad icon in the Dock, type Terminal in the search field, then click Terminal.
+A window should pop up where you can now type commands
+such as checking your conda installation with:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--help
+</pre></div>
+</div>
+<iframe width="560" height="315" type="text/html" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" src="https://www.youtube-nocookie.com/embed/TcSAln46u9U?modestbranding=1&playsinline=1&iv_load_policy=3&rel=0" class="yt-frame" allowfullscreen></iframe>
+</section>
+<section id="id3">
+<h3>Linux<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open <a class="reference external" href="https://www.anaconda.com/products/individual">https://www.anaconda.com/products/individual</a> in your web browser.</p></li>
+<li><p>Download the Anaconda Python 3 installer for Linux.</p></li>
+<li><p>Install Anaconda using all of the defaults for installation.</p>
+<ul class="simple">
+<li><p>Open a terminal window.</p></li>
+<li><p>Navigate to the folder where you downloaded the installer.</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">Anaconda3-</span></code> and press <kbd>Tab</kbd>.
+The name of the file you just downloaded should appear.</p></li>
+<li><p>Press <kbd>Return</kbd></p></li>
+<li><p>Follow the text-only prompts.  When the license agreement appears (a colon
+will be present at the bottom of the screen) press <kbd>Spacebar</kbd> until you see the
+bottom of the text. Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <kbd>Return</kbd> to approve the license. Press
+<kbd>Return</kbd> again to approve the default location for the files. Type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and
+press <kbd>Return</kbd> to prepend Anaconda to your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> (this makes the Anaconda
+distribution your user’s default Python).</p></li>
+</ul>
+</li>
+<li><p>Verify the installation:
+this depends a bit on your Linux distribution, but often you will have an Applications listing
+in which you can select a Terminal icon you can click. A window should pop up where you can now
+type commands such as checking your conda installation with</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--help
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./sections"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../welcome.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">SWD3: Software development practices for Research</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lifecycle.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Software Development Life Cycle</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-git">Installing Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-git">Setting up Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#is-git-available">Is Git available?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-configurations">Basic configurations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#user-info">User info</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#colours">Colours</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#text-editor">Text editor</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#default-git-branch-naming">Default Git branch naming</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-your-configurations">Check your configurations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#need-help">Need help?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-references">Additional references</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">Installing Anaconda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">MacOS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Linux</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By University of Leeds Research Computing Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
